@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <title>Javascript - Function Chaining</title>
+  </head>
+  <body>
+    <div class="container">
+      <section>
+        <h3>Reduce fruits</h3>
+        <pre>
+          <code>
+const food = [
+  { name: "Banana", type: "fruit" },
+  { name: "Apple", type: "fruit" },
+  { name: "Chocolate", type: "candy" },
+  { name: "Orange", type: "fruit" }
+];
+
+// This type of usage is very common
+food
+  .map(item => item.type)
+  .reduce((result, fruit) => {
+    result.push(fruit);
+    return [...new Set(result)];
+  }, []);
+// result: ['fruit', 'candy']
+          </code>
+        </pre>
+        <button class="btn btn-primary" onclick="reduceFruits()">
+          Reduce to fruits
+        </button>
+        <div class="d-flex mt-5">
+          <p>Result:</p>
+          <code class="ml-2" id="reduce_fruits"></code>
+        </div>
+      </section>
+
+      <section>
+        <div>
+          <h3>Create Doggo</h3>
+          <button class="btn btn-primary" onclick="createDoggo()">
+            Click to Doggo
+          </button>
+          <div id="doggo_result"></div>
+        </div>
+      </section>
+
+      <section>
+        <div>
+          <h3>User and Action</h3>
+          <button class="btn btn-primary" onclick="userAction()">
+            User and Action
+          </button>
+          <div id="doggo_result"></div>
+        </div>
+      </section>
+    </div>
+  </body>
+  <script
+    src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"
+  ></script>
+  <script src="index.js"></script>
+</html>
