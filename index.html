@@ -12,28 +12,9 @@
     <title>Javascript - Function Chaining</title>
   </head>
   <body>
-    <div class="container">
-      <section>
+    <div class="d-flex flex-column justify-items-center align-items-center">
+      <section class="d-flex flex-column">
         <h3>Reduce fruits</h3>
-        <pre>
-          <code>
-const food = [
-  { name: "Banana", type: "fruit" },
-  { name: "Apple", type: "fruit" },
-  { name: "Chocolate", type: "candy" },
-  { name: "Orange", type: "fruit" }
-];
-
-// This type of usage is very common
-food
-  .map(item => item.type)
-  .reduce((result, fruit) => {
-    result.push(fruit);
-    return [...new Set(result)];
-  }, []);
-// result: ['fruit', 'candy']
-          </code>
-        </pre>
         <button class="btn btn-primary" onclick="reduceFruits()">
           Reduce to fruits
         </button>
@@ -43,24 +24,22 @@ food
         </div>
       </section>
 
-      <section>
-        <div>
-          <h3>Create Doggo</h3>
-          <button class="btn btn-primary" onclick="createDoggo()">
-            Click to Doggo
-          </button>
-          <div id="doggo_result"></div>
-        </div>
+      <section
+        class="mt-5 d-flex flex-column justify-items-center align-items-center"
+      >
+        <h3>Create Doggo (open the dev-tools with <kbd>f12</kbd>)</h3>
+        <button class="btn btn-primary" onclick="createDoggo()">
+          Click to Doggo
+        </button>
       </section>
 
-      <section>
-        <div>
-          <h3>User and Action</h3>
-          <button class="btn btn-primary" onclick="userAction()">
-            User and Action
-          </button>
-          <div id="doggo_result"></div>
-        </div>
+      <section
+        class="mt-5 d-flex flex-column justify-items-center align-items-center"
+      >
+        <h3>Async Example (open the dev-tools with <kbd>f12</kbd>)</h3>
+        <button class="btn btn-primary" onclick="userAction()">
+          User and Action
+        </button>
       </section>
     </div>
   </body>
