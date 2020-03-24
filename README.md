@@ -1,6 +1,6 @@
 # Javascript Function Chaining
 
-There are some times when writing code and you have that huge function that has many responsibilities. Then you come up to the awesome idea to separate it in chunks. But not in a way that it loses the meaning and context of being part of the same structure. To do that, you can use what is called _Function_ or _Method Chaining_. If you have never ever heard about it, join me on this for a sec.
+Sometimes, when you are writing code, huge functions can happen. And you know what big functions mean: a lot of responsibilities in the same place and an awful code smell. Then you have that unstoppable urge, and a great idea actually, to separate it in chunks. But not in a way that it loses the meaning and context of being part of the same structure. To do that, you can use what is called _Function Chaining_ or _Method Chaining_. If you have never heard about it, join me on this for a sec.
 
 ## Requirements:
 
@@ -10,7 +10,7 @@ Some previous knowledge in JavaScript such as:
 - [Array methods](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
 - [Async functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function)
 
-If you are a developer for a while, you've already experienced some `Array` methods, something like [map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map), [reduce](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce), [filter](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter) and hence, you already saw something like this:
+If you have been a developer for a while, you've already experienced some `Array` methods, something such as [map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map), [reduce](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce), [filter](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter) and hence, you already saw something like this:
 
 ```javascript
 const food = [
@@ -36,7 +36,7 @@ By any means, the array method `map` returns an `Array`, that hence it has a for
 
 ## Knowing `this` better
 
-I'm not going to cover all nuances of `this` in this article, but it will be good to introduce at least the whys. The keyword [this](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this) can be often a nightmare to understand why things don't work when you expected them to 😅, and it doesn't matter how experienced you are, it can be tricky.
+I'm not going to cover all nuances of `this` in this article, but it will be good to introduce at least the whys. The keyword [this](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this) can often be a nightmare to understand why things don't work when you expect them to 😅, and it doesn't matter how experienced you are, it can be tricky.
 
 `This` will always point to the current `scope` or instance of anywhere it is called. Let's go for an example:
 
