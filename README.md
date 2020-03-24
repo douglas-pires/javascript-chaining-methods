@@ -1,6 +1,6 @@
 # Javascript Function Chaining
 
-Sometimes when writing code and you have that huge function that has many responsibilities, you may want to separate it in chunks. But not in a way that it loses the meaning and context of being part of the same structure. To do that, you can use a what is called _Function_ or _Method Chaining_.
+There are some times when writing code and you have that huge function that has many responsibilities. Then you come up to the awesome idea to separate it in chunks. But not in a way that it loses the meaning and context of being part of the same structure. To do that, you can use what is called _Function_ or _Method Chaining_. If you have never ever heard about it, join me on this for a sec.
 
 ## Requirements:
 
