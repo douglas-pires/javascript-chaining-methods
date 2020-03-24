@@ -1,5 +1,7 @@
 # Javascript Function Chaining
 
+Sometimes when writing code and you have that huge function that has many responsibilities, you may want to separate it in chunks. But not in a way that it loses the meaning and context of being part of the same structure. To do that, you can use a what is called _Function_ or _Method Chaining_.
+
 ## Requirements:
 
 Some previous knowledge in JavaScript such as:
@@ -28,7 +30,7 @@ food
 // result: ['fruit', 'candy']
 ```
 
-Javascript is the language of a thousand wonders, and we can have the impression that everything is permitted. The pattern above is called _Function Chaining_ and is used when you want to call multiple functions using the same object, and using its same reference.
+The pattern above is called _Function Chaining_ and is used when you want to call multiple functions using the same object, and using its same reference.
 
 By any means, the array method `map` returns an `Array`, that hence it has a formidable number of methods. By returning a reference that points to an `Array`, you will have access to all properties that `Array` has. Knowing that we can use the same principle to create our own methods chaining.
 
@@ -85,9 +87,75 @@ To resolve that, we should simply use an anonymous function call to represent th
 
 Now the dog's `this` scope is going to be accessible inside the function.
 
+## Using class
+
+You can also achieve the same result using [classes](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes):
+
+```javascript
+class Dog {
+  is = null;
+  log() {
+    console.log(this.is);
+  }
+  bark() {
+    this.is = "woofing";
+    this.log();
+    return this;
+  }
+  walk() {
+    this.is = "walking";
+    this.log();
+    return this;
+  }
+  eat() {
+    this.is = "eating";
+    this.log();
+    return this;
+  }
+}
+const dog = new Dog();
+dog
+  .bark()
+  .eat()
+  .walk();
+```
+
+## Using prototype
+
+If you have some reason, God knows why, to use prototype nowadays, here it goes::
+
+```javascript
+function Dog() {}
+
+Dog.prototype.is = null;
+Dog.prototype.log = function() {
+  console.log(this.is);
+};
+Dog.prototype.bark = function() {
+  this.is = "woofing";
+  this.log();
+  return this;
+};
+Dog.prototype.walk = function() {
+  this.is = "walking";
+  this.log();
+  return this;
+};
+Dog.prototype.eat = function() {
+  this.is = "eating";
+  this.log();
+  return this;
+};
+const dog = new Dog();
+dog
+  .bark()
+  .eat()
+  .walk();
+```
+
 ## What about async functions
 
-As you may know, `async` functions are a synthetic sugar for promises, so when you declare an async function, you will know that it will return a promise. Knowing that you will have a Promise as a result and hence, you can access all its methods.
+As you may know, `async` functions are a synthetic sugar for promises and [generators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Iterators_and_Generators), so when you declare an async function, you will know that it will return a promise. Knowing that you will have a Promise as a result and hence, you can access all its methods.
 
 ```javascript
 const requests = {

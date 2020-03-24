@@ -45,6 +45,65 @@ function createDoggo() {
     .walk();
 }
 
+function classSyntax() {
+  class Dog {
+    is = null;
+    log() {
+      console.log(this.is);
+    }
+    bark() {
+      this.is = "woofing";
+      this.log();
+      return this;
+    }
+    walk() {
+      this.is = "walking";
+      this.log();
+      return this;
+    }
+    eat() {
+      this.is = "eating";
+      this.log();
+      return this;
+    }
+  }
+  const dog = new Dog();
+  dog
+    .bark()
+    .eat()
+    .walk();
+}
+
+function createDoggoWithPrototype() {
+  function Dog() {}
+  Dog.prototype.is = null;
+  Dog.prototype.log = function() {
+    console.log(this.is);
+  };
+  Dog.prototype.bark = function() {
+    this.is = "woofing";
+    this.log();
+    return this;
+  };
+  Dog.prototype.walk = function() {
+    this.is = "walking";
+    this.log();
+    return this;
+  };
+  Dog.prototype.eat = function() {
+    this.is = "eating";
+    this.log();
+    return this;
+  };
+
+  const dog = new Dog();
+
+  dog
+    .bark()
+    .eat()
+    .walk();
+}
+
 async function userAction() {
   const requests = {
     user: null,
